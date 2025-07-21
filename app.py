@@ -73,10 +73,10 @@ def crawl_data(username, password, option_id, start_date, end_date):
     # 브라우저 설정 (헤드리스)
     options = uc.ChromeOptions()
     options.add_argument("--disable-blink-features=AutomationControlled")
-    options.add_argument("--headless=new")
+    options.add_argument("--headless")
     options.add_argument("--no-sandbox") # 샌드박스 비활성화 (컨테이너 환경에서 필수)
     options.add_argument("--disable-dev-shm-usage") # /dev/shm 사용 비활성화 (메모리 문제 방지)
-    options.binary_location = "/usr/bin/chromium" # 이전: "/usr/bin/chromium-browser"
+    options.binary_location = "/usr/bin/chromium"
     driver = uc.Chrome(options=options)
 
     # 로그인
