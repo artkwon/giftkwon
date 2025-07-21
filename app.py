@@ -76,7 +76,7 @@ def crawl_data(username, password, option_id, start_date, end_date):
     options.add_argument("--headless=new")
     options.add_argument("--no-sandbox") # 샌드박스 비활성화 (컨테이너 환경에서 필수)
     options.add_argument("--disable-dev-shm-usage") # /dev/shm 사용 비활성화 (메모리 문제 방지)
-    options.binary_location = "/usr/bin/chromium-browser" # Streamlit Cloud 환경의 일반적인 Chromium 경로
+    options.binary_location = "/usr/bin/chromium" # 이전: "/usr/bin/chromium-browser"
     driver = uc.Chrome(options=options)
 
     # 로그인
